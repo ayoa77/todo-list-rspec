@@ -11,8 +11,11 @@ class List
   end
 
   def complete_task(index)
-    tasks[index].complete!
-  end
+  return false unless tasks[index]
+  if tasks[index].complete!
+  return true
+   end
+    end
 
   def delete_task(index)
     tasks.delete_at(index)
